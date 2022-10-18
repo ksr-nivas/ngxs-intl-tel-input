@@ -12,7 +12,7 @@ li.iti__country:hover {
 }
 .country-dropdown {
 	border: 1px solid #ccc;
-	width: fit-content;
+	width: 100%;
 	padding: 1px;
 	border-collapse: collapse;
 }
@@ -34,6 +34,7 @@ li.iti__country:hover {
 .iti__country-list {
 	position: relative;
 	border: none;
+	width: min-content;
 }
 
 .iti input#country-search-box {

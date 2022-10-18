@@ -10,15 +10,14 @@
 			[(ngModel)]="separateDialCode">
 		<label>&nbsp;Separate Dial Code?</label>
 	</div>
-	<form #f="ngForm"
-		[formGroup]="phoneForm">
+	<form [formGroup]="phoneForm">
 		<div class="wrapper">
 			<ngx-intl-tel-input [cssClass]="'custom'"
 				[preferredCountries]="preferredCountries"
-				[enableAutoCountrySelect]="true"
+				[enableAutoCountrySelect]="false"
 				[enablePlaceholder]="true"
 				[searchCountryFlag]="true"
-				[searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+				[searchCountryField]="[SearchCountryField.All]"
 				[selectFirstCountry]="false"
 				[selectedCountryISO]="CountryISO.India"
 				[maxLength]="15"
@@ -30,23 +29,23 @@
 			</ngx-intl-tel-input>
 		</div>
 		<div class="wrapper">
-			<button (click)="f.reset()">Reset</button>
+			<button (click)="phoneForm.reset()">Reset</button>
 		</div>
 	</form>
 	<br>
 	<div><strong>Is input valid:</strong>
-		<pre>{{ !f.form.controls['phone'].invalid }}</pre>
+		<pre>{{ !phoneForm.controls['phone'].invalid }}</pre>
 	</div>
 	<div><strong>Is input touched:</strong>
-		<pre>{{ f.form.controls['phone'].touched }}</pre>
+		<pre>{{ phoneForm.controls['phone'].touched }}</pre>
 	</div>
 	<div><strong>Is form valid:</strong>
-		<pre>{{ f.form.valid }}</pre>
+		<pre>{{ phoneForm.valid }}</pre>
 	</div>
 	<div><strong>Form value:</strong>
-		<pre>{{ f.form.value | json }}</pre>
+		<pre>{{ phoneForm.value | json }}</pre>
 	</div>
 	<div><strong>Form validation errors:</strong>
-		<pre>{{ f.form.controls['phone'].errors | json }}</pre>
+		<pre>{{ phoneForm.controls['phone'].errors | json }}</pre>
 	</div>
 </div>

@@ -160,6 +160,7 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
 				});
 			return;
 		}
+		const searchTextExcludedPlus = this.countrySearchText.startsWith('+') ? this.countrySearchText.substring(1) : this.countrySearchText;
 		const countrySearchTextLower = this.countrySearchText.toLowerCase();
     // @ts-ignore
 		const country = this.allCountries.filter((c) => {
@@ -171,7 +172,7 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
 				if (c.name.toLowerCase().startsWith(countrySearchTextLower)) {
 					return c;
 				}
-				if (c.dialCode.startsWith(this.countrySearchText)) {
+				if (c.dialCode.startsWith(searchTextExcludedPlus)) {
 					return c;
 				}
 			} else {
@@ -187,7 +188,7 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
 					}
 				}
 				if (this.searchCountryField.indexOf(SearchCountryField.DialCode) > -1) {
-					if (c.dialCode.startsWith(this.countrySearchText)) {
+					if (c.dialCode.startsWith(searchTextExcludedPlus)) {
 						return c;
 					}
 				}
@@ -222,13 +223,13 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
 		this.value = this.phoneNumber;
 		countryCode = countryCode || this.selectedCountry.iso2;
 		// @ts-ignore
-    const number = this.getParsedNumber(this.phoneNumber, countryCode);
+    	const number = this.getParsedNumber(this.phoneNumber, countryCode);
 
 		// auto select country based on the extension (and areaCode if needed) (e.g select Canada if number starts with +1 416)
 		if (this.enableAutoCountrySelect) {
-      countryCode =
+      		countryCode =
 				number && number.getCountryCode()
-          // @ts-ignore
+          	// @ts-ignore
 					? this.getCountryIsoCode(number.getCountryCode(), number)
 					: this.selectedCountry.iso2;
 			if (countryCode && countryCode !== this.selectedCountry.iso2) {
@@ -321,6 +322,7 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
 		const allowedChars = /[0-9\+\-\(\)\ ]/;
 		const allowedCtrlChars = /[axcv]/; // Allows copy-pasting
 		const allowedOtherKeys = [
+			'Add',
 			'ArrowLeft',
 			'ArrowUp',
 			'ArrowRight',
