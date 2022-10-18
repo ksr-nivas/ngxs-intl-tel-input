@@ -5,20 +5,20 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NativeElementInjectorDirective } from './directives/native-element-injector.directive';
-import { NgxIntlTelInputComponent } from './ngx-intl-tel-input.component';
+import { NgxsIntlTelInputComponent } from './ngxs-intl-tel-input.component';
 
 export const dropdownModuleForRoot: ModuleWithProviders<BsDropdownModule> = BsDropdownModule.forRoot();
 
 @NgModule({
-	declarations: [NgxIntlTelInputComponent, NativeElementInjectorDirective],
+	declarations: [NgxsIntlTelInputComponent, NativeElementInjectorDirective],
 	imports: [
 		CommonModule,
 		FormsModule,
 		ReactiveFormsModule,
 		dropdownModuleForRoot,
   ],
-	exports: [NgxIntlTelInputComponent, NativeElementInjectorDirective],
+	exports: [NgxsIntlTelInputComponent, NativeElementInjectorDirective],
 })
-export class NgxIntlTelInputModule {
+export class NgxsIntlTelInputModule {
 
 }

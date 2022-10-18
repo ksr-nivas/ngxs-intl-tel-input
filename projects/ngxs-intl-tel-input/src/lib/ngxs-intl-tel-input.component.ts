@@ -21,20 +21,20 @@ import { CountryISO } from './enums/country-iso.enum';
 import { SearchCountryField } from './enums/search-country-field.enum';
 import { ChangeData } from './interfaces/change-data';
 import { Country } from './model/country.model';
-import { phoneNumberValidator } from './ngx-intl-tel-input.validator';
+import { phoneNumberValidator } from './ngxs-intl-tel-input.validator';
 import { PhoneNumberFormat } from './enums/phone-number-format.enum';
 
 @Component({
 	// tslint:disable-next-line: component-selector
-	selector: 'ngx-intl-tel-input',
-	templateUrl: './ngx-intl-tel-input.component.html',
-	styleUrls: ['./bootstrap-dropdown.css', './ngx-intl-tel-input.component.css'],
+	selector: 'ngxs-intl-tel-input',
+	templateUrl: './ngxs-intl-tel-input.component.html',
+	styleUrls: ['./bootstrap-dropdown.css', './ngxs-intl-tel-input.component.css'],
 	providers: [
 		CountryCode,
 		{
 			provide: NG_VALUE_ACCESSOR,
 			// tslint:disable-next-line:no-forward-ref
-			useExisting: forwardRef(() => NgxIntlTelInputComponent),
+			useExisting: forwardRef(() => NgxsIntlTelInputComponent),
 			multi: true,
 		},
 		{
@@ -44,7 +44,7 @@ import { PhoneNumberFormat } from './enums/phone-number-format.enum';
 		},
 	],
 })
-export class NgxIntlTelInputComponent implements OnInit, OnChanges {
+export class NgxsIntlTelInputComponent implements OnInit, OnChanges {
 	@Input() value: string | undefined = '';
 	@Input() preferredCountries: Array<string> = [];
 	@Input() enablePlaceholder = true;
@@ -92,7 +92,7 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
 	propagateChange = (_: ChangeData) => {};
 
 	constructor(private countryCodeData: CountryCode) {
-		// If this is not set, ngx-bootstrap will try to use the bs3 CSS (which is not what we've embedded) and will
+		// If this is not set, ngxs-bootstrap will try to use the bs3 CSS (which is not what we've embedded) and will
 		// Add the wrong classes and such
 		setTheme('bs4');
 	}
@@ -483,7 +483,7 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
 	}
 
 	/**
-	 * Clearing the list to avoid duplicates (https://github.com/webcat12345/ngx-intl-tel-input/issues/248)
+	 * Clearing the list to avoid duplicates (https://github.com/webcat12345/ngxs-intl-tel-input/issues/248)
 	 */
 	protected fetchCountryData(): void {
 		this.allCountries = [];

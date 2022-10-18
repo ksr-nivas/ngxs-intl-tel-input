@@ -1,5 +1,5 @@
 {
-	"name": "ngx-intl-tel-input",
+	"name": "ngxs-intl-tel-input",
 	"version": "4.0.0",
 	"peerDependencies": {
 		"@angular/common": "14.x.x",
@@ -14,7 +14,7 @@
 		"url": "git+https://github.com/ksr-nivas/ngx-intl-tel-input"
 	},
 	"author": {
-		"name": "webcat12345",
+		"name": "Srini",
 		"email": "srinivask.ria@gmail.com"
 	},
 	"keywords": [

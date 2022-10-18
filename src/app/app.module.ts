@@ -1,6 +1,6 @@
 import {
-	NgxIntlTelInputModule
-} from 'projects/ngx-intl-tel-input/src/lib/ngx-intl-tel-input.module';
+	NgxsIntlTelInputModule
+} from 'projects/ngxs-intl-tel-input/src/lib/ngxs-intl-tel-input.module';
 
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,7 +15,7 @@ import { AppComponent } from './app.component';
 		BrowserModule,
 		FormsModule,
 		ReactiveFormsModule,
-		NgxIntlTelInputModule,
+		NgxsIntlTelInputModule,
 		BrowserAnimationsModule
 	],
 	providers: [],
