@@ -11,7 +11,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ksr-nivas/ngx-intl-tel-input"
+		"url": "git+https://github.com/ksr-nivas/ngxs-intl-tel-input"
 	},
 	"author": {
 		"name": "Srini",
@@ -34,7 +34,7 @@
 	],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/ksr-nivas/ngx-intl-tel-input/issues"
+		"url": "https://github.com/ksr-nivas/ngxs-intl-tel-input/issues"
 	},
 	"devDependencies": {
 		"@types/google-libphonenumber": "^7.4.23"

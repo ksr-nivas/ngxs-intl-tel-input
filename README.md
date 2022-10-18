@@ -5,7 +5,7 @@ An Angular package for entering and validating international telephone numbers. 
 **Important:**
 Forked from webcat12345/ngx-intl-tel-input. Added Angular 14 compatibity and made some changes according to my requirements
 
-![alt](readme-assets/ngx-intl-tel-input.jpg)
+![alt](readme-assets/ngxs-intl-tel-input.jpg)
 
 **Compatibility:**
 
