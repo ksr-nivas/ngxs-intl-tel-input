@@ -80,8 +80,6 @@ Or this:
 
 [Stackblitz Demo (Angular 12)](https://stackblitz.com/edit/ngx-intl-tel-input-demo-ng-12)
 
-[Stackblitz Demo (Angular 14)](https://stackblitz.com/edit/ngx-intl-tel-input-demo-ng-14)
-
 ```html
 <form #f="ngForm" [formGroup]="phoneForm">
 	<ngx-intl-tel-input
